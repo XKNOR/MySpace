@@ -1,0 +1,45 @@
+html, body {
+  background-image: url("https://web.archive.org/web/20090829041017im_/http://www.geocities.com/Tokyo/Field/8617/stars.gif") !important;
+  background-color: #000 !important;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.myspace-container {
+  width: 95% !important;
+  max-width: 1200px !important;
+  margin: 20px auto !important;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 5px double #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
+  min-height: 90vh;
+}
+.cyber-button {
+  box-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+  transition: 0.3s;
+}
+.cyber-button:hover {
+  box-shadow: 0 0 10px #ff00ff, 0 0 30px #ff00ff;
+  transform: scale(1.05);
+}
+
+/* Efecto Neón para botones de Material UI */
+.MuiButton-contained {
+  box-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff !important;
+  transition: 0.3s shadow, 0.3s transform !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+}
+
+.MuiButton-contained:hover {
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff !important;
+  transform: translateY(-2px);
+}
+
+/* Tarjetas con borde de neón sutil */
+.MuiPaper-root {
+  border: 1px solid #333 !important;
+  background-color: rgba(15, 15, 15, 0.9) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1) !important;
+}
