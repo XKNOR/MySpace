@@ -3,10 +3,29 @@ name: CI
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # Le indicamos a GitHub que ejecute todo dentro de tu carpeta de backend
+    defaults:
+      run:
+        working-directory: 45242631_Gonzalez_AO2/backend
+
     steps:
-      - name: Ejecutar saludo de prueba
-        run: echo "Hola Mundo, GitHub Actions funciona perfectamente"
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar el entorno de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instalar las dependencias del proyecto
+        run: npm install
+
+      - name: Ejecutar pruebas unitarias de seguridad (Jest)
+        run: npm test
