@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { generateToken, hashPassword, comparePassword } = require('../utils/auth');
-const User = require('./users');// IMPORTANTE: Usamos el modelo de Sequelize de routes/users.js
+const User = require('./users');
 
-// Registro de usuario
+
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
     const token = generateToken(newUser);
     res.status(201).json({ token, user: newUser });
   } catch (error) {
-    // Esto imprimirá en tu terminal de VS Code el motivo exacto
+    
     if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') {
         console.log("Campos que fallan:", error.errors.map(e => e.path));
         console.log("Motivo:", error.errors.map(e => e.message));

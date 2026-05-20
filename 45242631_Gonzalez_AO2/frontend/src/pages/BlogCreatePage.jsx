@@ -14,7 +14,6 @@ const BlogCreatePage = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    // IMPORTANTE: El nombre "image" debe coincidir con el backend
     if (image) formData.append("image", image); 
 
     try {

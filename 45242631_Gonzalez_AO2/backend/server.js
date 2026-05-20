@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// --- RELACIONES (EL MOTOR DEL SISTEMA) ---
+// --- RELACIONES  ---
 User.hasMany(Blog, { foreignKey: "userId", as: "posts" });
 Blog.belongsTo(User, { foreignKey: "userId", as: "author" });
 

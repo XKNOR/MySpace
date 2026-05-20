@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-// ESTA ES LA LÍNEA QUE FALTA:
-// Lee el secreto desde el archivo .env
 const JWT_SECRET = process.env.JWT_SECRET || 'clave_de_respaldo_por_si_el_env_falla';
 
 const User = require('../routes/users');
@@ -11,7 +9,7 @@ const User = require('../routes/users');
 const generateToken = (user) => {
   return jwt.sign(
     { id: user.id, role: user.role },
-    JWT_SECRET, // Ahora sí sabe qué es JWT_SECRET
+    JWT_SECRET, 
     { expiresIn: '1h' }
   );
 };

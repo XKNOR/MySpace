@@ -19,7 +19,6 @@ const LoginPage = () => {
       localStorage.setItem("token", res.data.token);
       toast.success("¡Bienvenido!");
       
-      // 🔄 Forzamos el refresco para que impacte la Navbar al instante
       window.location.href = "/";
     } catch (err) {
       toast.error(err.response?.data?.msg || "Error al entrar");

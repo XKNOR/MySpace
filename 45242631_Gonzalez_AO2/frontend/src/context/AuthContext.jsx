@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        // Obtenemos los datos del usuario actual usando el token
+        
         const res = await api.get('/auth/me'); 
         setUser(res.data);
       } catch (error) {
@@ -49,11 +49,11 @@ export const AuthProvider = ({ children }) => {
   const register = async (username, email, password) => {
     try {
       const res = await api.post('/auth/register', { username, email, password });
-      // Guardamos el token que nos devuelve el servidor al registrarse
+      
       if (res.data.token) {
         localStorage.setItem('token', res.data.token);
         setUser(res.data.user);
-        navigate('/'); // Redirigir al Dashboard inmediatamente
+        navigate('/'); 
         return true;
       }
       return false;

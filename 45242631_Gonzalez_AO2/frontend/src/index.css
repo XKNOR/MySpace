@@ -24,7 +24,7 @@ html, body {
   transform: scale(1.05);
 }
 
-/* Efecto Neón para botones de Material UI */
+
 .MuiButton-contained {
   box-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff !important;
   transition: 0.3s shadow, 0.3s transform !important;
@@ -37,7 +37,7 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Tarjetas con borde de neón sutil */
+
 .MuiPaper-root {
   border: 1px solid #333 !important;
   background-color: rgba(15, 15, 15, 0.9) !important;

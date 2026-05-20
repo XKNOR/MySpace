@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom'; // Importa Outlet
+import { Navigate, Outlet } from 'react-router-dom'; 
 import { useAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ roles = ['user', 'admin'] }) => {
@@ -13,7 +13,7 @@ const ProtectedRoute = ({ roles = ['user', 'admin'] }) => {
     return <Navigate to="/" />;
   }
 
-  return <Outlet />; // DEBE ser Outlet para renderizar las páginas hijas
+  return <Outlet />; 
 };
 
 export default ProtectedRoute;

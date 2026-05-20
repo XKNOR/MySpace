@@ -14,14 +14,14 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Llamamos al registro del context
+    
     const success = await register(username, email, password);
     
     if (success) {
       toast.success('¡Bienvenido a MySpace! Registro exitoso.');
-      // La navegación a '/' ya ocurre dentro de AuthContext.register
+      
     } else {
-      // El mensaje de error específico suele venir del interceptor de api.js
+      
       toast.error('No se pudo completar el registro. Verifica los datos.');
     }
   };

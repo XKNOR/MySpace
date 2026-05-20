@@ -25,12 +25,10 @@ const DashboardPage = () => {
       </Typography>
       
       {blogs.map((blog) => {
-        // Chequeamos ambos nombres posibles del campo de imagen
         let imagePath = blog.image || blog.imageUrl;
         let fullUrl = null;
 
         if (imagePath) {
-          // 🛠️ Corrección para Windows: reemplaza \ por / y asegura la barra / inicial
           imagePath = imagePath.replace(/\\/g, "/");
           if (!imagePath.startsWith("/")) {
             imagePath = "/" + imagePath;
@@ -38,7 +36,6 @@ const DashboardPage = () => {
           fullUrl = `http://localhost:5000${imagePath}`;
         }
 
-        // Compatibilidad por si viene como id o _id de la base de datos
         const blogId = blog._id || blog.id;
 
         return (
