@@ -1,1 +1,12 @@
+name: CI
 
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ejecutar saludo de prueba
+        run: echo "Hola Mundo, GitHub Actions funciona perfectamente"
